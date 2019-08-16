@@ -8,5 +8,6 @@ defmodule PerudoApiWeb.Router do
   scope "/api", PerudoApiWeb do
     pipe_through :api
     resources("/users", UserController, except: [:new, :edit])
+    post("/users/sign_in", UserController, :sign_in)
   end
 end

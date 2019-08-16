@@ -40,5 +40,9 @@ defmodule PerudoApiWeb.Endpoint do
     key: "_perudo_api_key",
     signing_salt: "gH2ok7qf"
 
+  plug Plug.Corsica,
+    origins: "http://localhost:8080",
+    log: [rejected: :error, invalid: :warn, accepted: :debug]
+
   plug PerudoApiWeb.Router
 end
