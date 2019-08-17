@@ -110,7 +110,7 @@ defmodule PerudoApi.Auth do
     |> verify_password(password)
   end
 
-  def verify_password(nil, _) do
+  defp verify_password(nil, _) do
     # Dummy check to make enumeration harder
     Bcrypt.no_user_verify()
     {:error, "Wrong email or password"}
